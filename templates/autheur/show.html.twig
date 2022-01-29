@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Autheur{% endblock %}
+
+{% block body %}
+     <div class="container-fluid p-4 ">
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8  p-3  bg-light text-center border border-5">
+    <h3 class="mb-4 text-center">Author details :</h3>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ autheur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_prenom</th>
+                <td>{{ autheur.nomPrenom }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ autheur.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Date_naissance</th>
+                <td>{{ autheur.dateNaissance ? autheur.dateNaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nationalite</th>
+                <td>{{ autheur.nationalite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('autheur_index') }}">back to list</a>
+
+   
+    </div></div></div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre{% endblock %}
+
+{% block body %}
+  <div class="container-fluid p-4 ">
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8  p-3  bg-light text-center border border-5">
+    <h3 class="mb-4 text-center">Book details :</h3>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ livre.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ livre.titre }}</td>
+            </tr>
+            <tr>
+                <th>Isbn</th>
+                <td>{{ livre.isbn }}</td>
+            </tr>
+            <tr>
+                <th>Nombre_pages</th>
+                <td>{{ livre.nombrePages }}</td>
+            </tr>
+            <tr>
+                <th>Date_parution</th>
+                <td>{{ livre.dateParution ? livre.dateParution|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ livre.note }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('livre_index') }}">back to list</a>
+
+  
+    </div></div></div>
+{% endblock %}

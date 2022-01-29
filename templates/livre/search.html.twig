@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les détails du Livre{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-3 ">
+<div class="row p-3">
+<div class="col-md-1"></div>
+<div class="col-md-10">
+    <h1 class="text-center mb-4">the search result :</h1>
+
+    <table class="table table-striped">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>Titre</th>
+                 <th>Isbn</th>
+                  <th>nombres des pages</th>
+                 <th>Date_parution</th>
+                 <th>Note</th>
+            </tr>
+             </thead>
+              </tbody>
+            {% for livre in livres %}
+            <tr>
+               <td>{{ livre.titre }}</td>
+                <td>{{ livre.isbn }}</td>
+                <td>{{ livre.nombrePages }}</td>
+                <td>{{ livre.dateParution ? livre.dateParution|date('Y-m-d') : '' }}</td>
+                <td>{{ livre.note }}</td>
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+</div></div></div>
+    <a href="{{ path('livre_index') }}">back to list</a>
+
+    
+{% endblock %}
